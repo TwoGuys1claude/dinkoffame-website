@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { SITE_URL, SITE_NAME, SITE_DESCRIPTION } from "@/lib/constants";
+import { JsonLd } from "@/components/JsonLd";
+import { buildOrganizationSchema, buildWebSiteSchema } from "@/lib/jsonld";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -13,9 +16,12 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Dink of Fame - Make Pickleball Social Again",
-  description:
-    "The social pickleball app where every game earns XP, every opponent builds your network, and every court is a community. Track matches, earn badges, climb leaderboards.",
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: `${SITE_NAME} - Make Pickleball Social Again`,
+    template: `%s | ${SITE_NAME}`,
+  },
+  description: SITE_DESCRIPTION,
   keywords: [
     "pickleball",
     "pickleball app",
@@ -27,23 +33,33 @@ export const metadata: Metadata = {
     "pickleball match tracker",
     "pickleball badges",
     "pickleball players",
+    "pickleball scoring rules",
+    "pickleball kitchen rules",
+    "pickleball drills",
+    "pickleball skill level",
+    "pickleball rating calculator",
   ],
   openGraph: {
-    title: "Dink of Fame - Make Pickleball Social Again",
+    title: `${SITE_NAME} - Make Pickleball Social Again`,
     description:
       "Track matches, earn XP, collect badges, and climb your facility leaderboard. The social layer pickleball has been missing.",
     type: "website",
-    siteName: "Dink of Fame",
+    siteName: SITE_NAME,
+    url: SITE_URL,
+    images: [{ url: `${SITE_URL}/logo.png`, width: 512, height: 512 }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Dink of Fame - Make Pickleball Social Again",
+    title: `${SITE_NAME} - Make Pickleball Social Again`,
     description:
       "Track matches, earn XP, collect badges, and climb your facility leaderboard.",
   },
   robots: {
     index: true,
     follow: true,
+  },
+  alternates: {
+    canonical: SITE_URL,
   },
 };
 
@@ -57,6 +73,8 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased font-sans`}
       >
+        <JsonLd data={buildOrganizationSchema()} />
+        <JsonLd data={buildWebSiteSchema()} />
         {children}
       </body>
     </html>

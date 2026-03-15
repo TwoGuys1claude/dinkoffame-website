@@ -1,12 +1,9 @@
 import Link from "next/link";
 import { WaitlistForm } from "@/components/WaitlistForm";
-
-const NAV_LINKS = [
-  { label: "Features", href: "#features" },
-  { label: "How It Works", href: "#how-it-works" },
-  { label: "Badges", href: "#badges" },
-  { label: "Leaderboard", href: "#leaderboard" },
-];
+import { Header } from "@/components/Header";
+import { Footer } from "@/components/Footer";
+import { BLOG_POSTS } from "@/lib/blog";
+import { BlogCard } from "@/components/blog/BlogCard";
 
 const FEATURES = [
   {
@@ -108,36 +105,7 @@ const LEADERBOARD_DEMO = [
 export default function Home() {
   return (
     <div className="min-h-screen bg-background text-foreground">
-      {/* ─── Header ──────────────────────────────────────────────────── */}
-      <header className="fixed top-0 left-0 right-0 z-50 border-b border-border/50 bg-background/80 backdrop-blur-xl">
-        <div className="mx-auto max-w-6xl flex items-center justify-between px-6 py-4">
-          <Link href="/" className="flex items-center gap-2.5">
-            <img src="/logo.png" alt="Dink of Fame" className="w-8 h-8 rounded-lg" />
-            <span className="text-lg font-bold tracking-tight text-foreground">
-              Dink of <span className="text-primary">Fame</span>
-            </span>
-          </Link>
-          <nav className="hidden md:flex items-center gap-8">
-            {NAV_LINKS.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                className="text-sm text-muted hover:text-foreground transition-colors"
-              >
-                {link.label}
-              </a>
-            ))}
-          </nav>
-          <div className="flex items-center gap-3">
-            <a
-              href="#waitlist"
-              className="px-5 py-2.5 bg-primary text-background text-sm font-semibold rounded-full hover:bg-primary-dark transition-colors"
-            >
-              Join Waitlist
-            </a>
-          </div>
-        </div>
-      </header>
+      <Header />
 
       {/* ─── Hero ────────────────────────────────────────────────────── */}
       <section className="relative pt-32 pb-20 md:pt-44 md:pb-32 overflow-hidden">
@@ -630,6 +598,64 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ─── Find Your Level ───────────────────────────────────────── */}
+      <section className="py-20 md:py-32 relative">
+        <div className="absolute inset-0 bg-surface/50" />
+        <div className="relative mx-auto max-w-4xl px-6 text-center">
+          <span className="text-sm font-semibold text-accent uppercase tracking-widest">
+            Free Tool
+          </span>
+          <h2 className="mt-3 text-3xl md:text-5xl font-extrabold tracking-tight">
+            What level pickleball{" "}
+            <span className="text-gradient-warm">player are you?</span>
+          </h2>
+          <p className="mt-4 text-lg text-muted max-w-xl mx-auto">
+            Take our 2-minute skill quiz to get your estimated rating from 2.0
+            to 4.5+, plus personalized tips to improve your game.
+          </p>
+          <Link
+            href="/tools/skill-quiz"
+            className="mt-8 inline-flex px-8 py-4 bg-accent text-background text-base font-bold rounded-full hover:bg-accent-light transition-all hover:scale-105"
+          >
+            Take the Skill Quiz
+          </Link>
+        </div>
+      </section>
+
+      {/* ─── From Our Blog ─────────────────────────────────────────── */}
+      <section className="py-20 md:py-32">
+        <div className="mx-auto max-w-6xl px-6">
+          <div className="text-center mb-16">
+            <span className="text-sm font-semibold text-primary uppercase tracking-widest">
+              Blog
+            </span>
+            <h2 className="mt-3 text-3xl md:text-5xl font-extrabold tracking-tight">
+              Tips & guides to{" "}
+              <span className="text-gradient">level up your game</span>
+            </h2>
+            <p className="mt-4 text-lg text-muted max-w-xl mx-auto">
+              Strategy, rules, drills, and everything pickleball.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {BLOG_POSTS.slice(0, 3).map((post) => (
+              <BlogCard key={post.slug} post={post} />
+            ))}
+          </div>
+
+          <div className="text-center mt-10">
+            <Link
+              href="/blog"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-primary/10 border border-primary/20 rounded-full text-sm font-semibold text-primary hover:bg-primary/20 transition-all"
+            >
+              View all articles
+              <span className="text-lg">→</span>
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* ─── Waitlist CTA ────────────────────────────────────────────── */}
       <section id="waitlist" className="py-20 md:py-32 relative">
         <div className="absolute inset-0 bg-surface/50" />
@@ -660,38 +686,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ─── Footer ──────────────────────────────────────────────────── */}
-      <footer className="border-t border-border/40 py-12">
-        <div className="mx-auto max-w-6xl px-6">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-            <div className="flex items-center gap-2.5">
-              <img src="/logo.png" alt="Dink of Fame" className="w-7 h-7 rounded-lg" />
-              <span className="text-sm font-bold tracking-tight">
-                Dink of <span className="text-primary">Fame</span>
-              </span>
-            </div>
-
-            <div className="flex items-center gap-6 text-sm text-muted">
-              <a href="#features" className="hover:text-foreground transition-colors">
-                Features
-              </a>
-              <a href="#badges" className="hover:text-foreground transition-colors">
-                Badges
-              </a>
-              <a href="#leaderboard" className="hover:text-foreground transition-colors">
-                Leaderboard
-              </a>
-              <a href="#waitlist" className="hover:text-foreground transition-colors">
-                Waitlist
-              </a>
-            </div>
-
-            <p className="text-xs text-muted/50">
-              &copy; 2026 Dink of Fame. Make Pickleball Social Again.
-            </p>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }
