@@ -30,6 +30,12 @@ export function Footer() {
               Blog
             </Link>
             <Link
+              href="/tools/drill-generator"
+              className="hover:text-foreground transition-colors"
+            >
+              Drills
+            </Link>
+            <Link
               href="/tools/round-robin-generator"
               className="hover:text-foreground transition-colors"
             >
