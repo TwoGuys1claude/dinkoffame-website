@@ -48,6 +48,12 @@ export function Footer() {
               Skill Quiz
             </Link>
             <Link
+              href="/tools/calorie-calculator"
+              className="hover:text-foreground transition-colors"
+            >
+              Calories
+            </Link>
+            <Link
               href="/#waitlist"
               className="hover:text-foreground transition-colors"
             >

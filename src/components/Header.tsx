@@ -6,6 +6,7 @@ const NAV_LINKS = [
   { label: "Drills", href: "/tools/drill-generator" },
   { label: "Round Robin", href: "/tools/round-robin-generator" },
   { label: "Skill Quiz", href: "/tools/skill-quiz" },
+  { label: "Calories", href: "/tools/calorie-calculator" },
 ];
 
 export function Header() {
