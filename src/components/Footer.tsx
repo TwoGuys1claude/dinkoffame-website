@@ -54,6 +54,12 @@ export function Footer() {
               Calories
             </Link>
             <Link
+              href="/tools/court-dimensions"
+              className="hover:text-foreground transition-colors"
+            >
+              Court Size
+            </Link>
+            <Link
               href="/#waitlist"
               className="hover:text-foreground transition-colors"
             >

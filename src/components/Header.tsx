@@ -7,6 +7,7 @@ const NAV_LINKS = [
   { label: "Round Robin", href: "/tools/round-robin-generator" },
   { label: "Skill Quiz", href: "/tools/skill-quiz" },
   { label: "Calories", href: "/tools/calorie-calculator" },
+  { label: "Court Size", href: "/tools/court-dimensions" },
 ];
 
 export function Header() {
