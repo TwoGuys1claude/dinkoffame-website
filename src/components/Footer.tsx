@@ -42,10 +42,10 @@ export function Footer() {
               Round Robin
             </Link>
             <Link
-              href="/tools/skill-quiz"
+              href="/tools/pickleball-iq-test"
               className="hover:text-foreground transition-colors"
             >
-              Skill Quiz
+              IQ Test
             </Link>
             <Link
               href="/tools/calorie-calculator"

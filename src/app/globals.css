@@ -139,3 +139,10 @@ body {
 .animate-float-slow {
   animation: float 5s ease-in-out infinite;
 }
+
+/* IQ quiz calculating bar */
+@keyframes calc-bar {
+  0% { width: 0%; }
+  60% { width: 75%; }
+  100% { width: 100%; }
+}

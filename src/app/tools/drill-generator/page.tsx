@@ -475,16 +475,16 @@ export default function DrillGeneratorPage() {
                   </p>
                 </Link>
                 <Link
-                  href="/tools/skill-quiz"
+                  href="/tools/pickleball-iq-test"
                   className="rounded-xl border border-border/40 bg-card/60 p-5 hover:border-primary/30 transition-colors group"
                 >
-                  <span className="text-xl">🎯</span>
+                  <span className="text-xl">🧠</span>
                   <h3 className="font-bold text-sm mt-2 mb-1 group-hover:text-primary transition-colors">
-                    Pickleball Skill Quiz
+                    Pickleball IQ Test
                   </h3>
                   <p className="text-xs text-muted">
-                    Find your skill rating from 2.0 to 4.5+ with our
-                    10-question assessment.
+                    28 questions across rules, strategy, and shots. Find your
+                    Pickleball IQ.
                   </p>
                 </Link>
               </div>

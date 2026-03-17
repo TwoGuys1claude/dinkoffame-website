@@ -5,7 +5,7 @@ const NAV_LINKS = [
   { label: "Blog", href: "/blog" },
   { label: "Drills", href: "/tools/drill-generator" },
   { label: "Round Robin", href: "/tools/round-robin-generator" },
-  { label: "Skill Quiz", href: "/tools/skill-quiz" },
+  { label: "IQ Test", href: "/tools/pickleball-iq-test" },
   { label: "Calories", href: "/tools/calorie-calculator" },
   { label: "Court Size", href: "/tools/court-dimensions" },
 ];

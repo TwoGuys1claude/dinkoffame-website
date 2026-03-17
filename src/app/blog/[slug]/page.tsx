@@ -151,10 +151,10 @@ export default async function BlogPostPage({
                 Join the Waitlist
               </Link>
               <Link
-                href="/tools/skill-quiz"
+                href="/tools/pickleball-iq-test"
                 className="px-6 py-3 text-sm font-semibold text-muted border border-border rounded-full hover:text-foreground hover:border-primary/40 transition-all"
               >
-                Take the Skill Quiz
+                Take the IQ Test
               </Link>
             </div>
           </div>

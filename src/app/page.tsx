@@ -606,18 +606,18 @@ export default function Home() {
             Free Tool
           </span>
           <h2 className="mt-3 text-3xl md:text-5xl font-extrabold tracking-tight">
-            What level pickleball{" "}
-            <span className="text-gradient-warm">player are you?</span>
+            What&apos;s your pickleball{" "}
+            <span className="text-gradient-warm">IQ?</span>
           </h2>
           <p className="mt-4 text-lg text-muted max-w-xl mx-auto">
-            Take our 2-minute skill quiz to get your estimated rating from 2.0
-            to 4.5+, plus personalized tips to improve your game.
+            28 knowledge-based questions across rules, strategy, shots, and
+            more. Find out if you&apos;re a Casual Dinker or a Pickleball Genius.
           </p>
           <Link
-            href="/tools/skill-quiz"
+            href="/tools/pickleball-iq-test"
             className="mt-8 inline-flex px-8 py-4 bg-accent text-background text-base font-bold rounded-full hover:bg-accent-light transition-all hover:scale-105"
           >
-            Take the Skill Quiz
+            Take the IQ Test
           </Link>
         </div>
       </section>
